@@ -20,9 +20,17 @@ class App extends Component {
                 <div className="content">
                     {/* <Routes> */}
                     <Switch>
-                        <Route path="/products" component={Products} />
+                        {/* <Route path="/products" component={Products} /> */}
+                        <Route
+                            path="/products"
+                            render={(props) => (
+                                <Products sortBy="newest" {...props} />
+                            )}
+                        />
+
                         <Route path="/posts" component={Posts} />
                         <Route path="/admin" component={Dashboard} />
+
                         <Route path="/" component={Home} />
                         {/* <Route path="/" exact component={Home} /> */}
                     </Switch>
