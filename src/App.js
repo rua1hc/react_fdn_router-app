@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Route, Routes, Switch } from "react-router-dom";
+import { Route, Routes, Switch, Redirect } from "react-router-dom";
 
 import NavBar from "./components/navbar";
 import Products from "./components/products";
@@ -24,7 +24,6 @@ class App extends Component {
                             path="/products/:id"
                             component={ProductDetails}
                         />
-
                         {/* <Route path="/products" component={Products} /> */}
                         <Route
                             path="/products"
@@ -36,8 +35,13 @@ class App extends Component {
                         <Route path="/posts/:year?/:month?" component={Posts} />
                         <Route path="/admin" component={Dashboard} />
 
-                        <Route path="/" component={Home} />
+                        <Redirect from="/messages" to="/posts" />
+                        <Route path="/not-found" component={NotFound} />
+
+                        <Route path="/" exact component={Home} />
                         {/* <Route path="/" exact component={Home} /> */}
+
+                        <Redirect to="/not-found" />
                     </Switch>
                     {/* </Routes> */}
                 </div>
