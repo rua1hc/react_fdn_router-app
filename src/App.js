@@ -20,6 +20,11 @@ class App extends Component {
                 <div className="content">
                     {/* <Routes> */}
                     <Switch>
+                        <Route
+                            path="/products/:id"
+                            component={ProductDetails}
+                        />
+
                         {/* <Route path="/products" component={Products} /> */}
                         <Route
                             path="/products"
@@ -28,7 +33,7 @@ class App extends Component {
                             )}
                         />
 
-                        <Route path="/posts" component={Posts} />
+                        <Route path="/posts/:year/:month" component={Posts} />
                         <Route path="/admin" component={Dashboard} />
 
                         <Route path="/" component={Home} />
