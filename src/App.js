@@ -33,7 +33,7 @@ class App extends Component {
                             )}
                         />
 
-                        <Route path="/posts/:year/:month" component={Posts} />
+                        <Route path="/posts/:year?/:month?" component={Posts} />
                         <Route path="/admin" component={Dashboard} />
 
                         <Route path="/" component={Home} />
